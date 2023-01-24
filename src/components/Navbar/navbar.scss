@@ -1,0 +1,89 @@
+.nav {
+  color: var(--grey);
+  font-weight: 500;
+  width: 100%;
+  height: 60px;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__hamburger {
+    display: none;
+  }
+  &_brand-logo {
+    align-items: center;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+
+    &:hover {
+      color: var(--blue-hover);
+    }
+  }
+  &__menu {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+
+    a:hover {
+      color: var(--blue-hover);
+    }
+  }
+  &__user-menu {
+    a:hover,
+    button:hover {
+      color: var(--blue-hover);
+    }
+
+    a,
+    button {
+      padding: 0 5px;
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    &__hamburger {
+      display: block;
+      transition: background-color 0.2s ease-in-out;
+      background-color: #fff;
+      border: none;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    &__brand-logo {
+      text-align: center;
+      position: absolute;
+      left: calc(50vw - 30px);
+    }
+    &__menu {
+      display: none;
+      a {
+        width: 100%;
+        padding: 15px 0;
+        margin: 0;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+    &__menu.expanded {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      justify-content: flex-start;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      background-color: #fff;
+    }
+  }
+}
