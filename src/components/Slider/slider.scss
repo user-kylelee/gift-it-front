@@ -1,0 +1,16 @@
+.slider {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+
+  &__container {
+    width: 300vw;
+    display: flex;
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    transition: all 1s ease;
+  }
+}
