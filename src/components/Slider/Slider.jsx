@@ -12,11 +12,11 @@ const Slider = () => {
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
+    setCurrentSlide(currentSlide === 0 ? data.length - 1 : currentSlide - 1);
   };
 
   const nextSlide = () => {
-    setCurrentSlide(currentSlide === 2 ? 0 : currentSlide + 1);
+    setCurrentSlide(currentSlide === data.length - 1 ? 0 : currentSlide + 1);
   };
   return (
     <div className="slider">
@@ -24,9 +24,9 @@ const Slider = () => {
         className="slider__container"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
-        <img src={data[0]} alt="image0" />
-        <img src={data[1]} alt="image1" />
-        <img src={data[2]} alt="image2" />
+        {data.map((img, index) => {
+          return <img src={img} alt={`mage${index}`} />;
+        })}
       </div>
       <div className="slider__icons">
         <IconButton
