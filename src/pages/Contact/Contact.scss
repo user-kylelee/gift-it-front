@@ -1,0 +1,77 @@
+.contact-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 100px 0 100px 0;
+  text-align: center;
+  .faq {
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    &__elements {
+      padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      .category {
+        flex: 1 0 25%;
+        margin: 20px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+
+        padding: 20px 10px;
+        &__icon {
+          padding: 10px;
+          align-items: center;
+          font-size: 32px;
+        }
+        &__name {
+          text-align: center;
+          font-weight: 500;
+          width: 100%;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+  .contact {
+    padding: 50px 0;
+    max-width: 700px;
+    margin: auto;
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 20px 0;
+    }
+
+    &__elements {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-evenly;
+
+      .category {
+        padding: 20px 0;
+        width: 30%;
+        height: 200px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        &__icon {
+          padding: 10px 0;
+          font-size: 32px;
+        }
+        &__btn {
+          margin: 0 30px;
+          padding: 10px 0;
+          background-color: black;
+          color: white;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        &__desc {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
