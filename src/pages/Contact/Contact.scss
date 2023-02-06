@@ -43,7 +43,64 @@
       font-weight: 500;
       padding: 20px 0;
     }
+    &__modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0); /* Fallback color */
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.4
+      ); /* Black w/ opacity *
+      
+      /* Modal Content/Box */
+      .modal-content {
+        max-width: 1000px;
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px 20px 50px 20px;
+        min-height: 500px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        p {
+          max-width: 500px;
+          margin: auto;
+          text-align: left;
+          padding-bottom: 5px;
+        }
+        input,
+        textarea,
+        button {
+          max-width: 500px;
+          width: 100%;
+          margin: auto;
+        }
+        textarea {
+          padding-top: 5px;
+        }
 
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+
+          &:hover,
+          &:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
     &__elements {
       padding: 20px 0;
       display: flex;
@@ -66,6 +123,11 @@
           color: white;
           font-size: 14px;
           font-weight: 500;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+          }
         }
         &__desc {
           padding: 10px 20px;

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./Contact.scss";
 import {
   CiDeliveryTruck,
@@ -10,9 +11,16 @@ import {
   CiPhone,
 } from "react-icons/ci";
 import { IoShareSocialOutline } from "react-icons/io5";
-
 import { BsBoxSeam } from "react-icons/bs";
+import "../../styles/form.scss";
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = () => {
+    alert("submit request");
+  };
   return (
     <div className="contact-container">
       <div className="faq">
@@ -63,7 +71,14 @@ const Contact = () => {
             <div className="category__icon">
               <CiMail />
             </div>
-            <div className="category__btn">EMAIL US</div>
+            <div
+              className="category__btn"
+              onClick={() => {
+                document.getElementById("contact-form").style.display = "block";
+              }}
+            >
+              EMAIL US
+            </div>
             <div className="category__desc">
               Our team will get back to you in no time
             </div>
@@ -84,6 +99,62 @@ const Contact = () => {
             </div>
             <div className="category__btn">MESSAGE US</div>
             <div className="category__desc">Message us via social networks</div>
+          </div>
+        </div>
+        <div className="contact__modal" id="contact-form">
+          <div className="modal-content">
+            <span
+              className="close"
+              onClick={() => {
+                document.getElementById("contact-form").style.display = "none";
+              }}
+            >
+              &times;
+            </span>
+            <form onSubmit={handleSubmit}>
+              <h1 className="form__heading">Contact Us</h1>
+              <div className="form__item">
+                <p>
+                  <label htmlFor="name">Your Name</label>
+                </p>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="form__item">
+                <p>
+                  <label htmlFor="email">Email</label>
+                </p>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="form__item">
+                <p>
+                  <label htmlFor="message">Message</label>
+                </p>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
+              </div>
+              <div className="form__item">
+                <button type="submit" className="form__btn">
+                  SEND MESSAGE
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
